@@ -50,6 +50,10 @@ theme_set(theme_pubr())
 ***
 
 ### 1.0 Load and examine a data set
+* Load data and view
+* Examine columns and data types
+* Define box plots
+* Describe meta data
 ```{r}
 # Let's load a data set from the Hawks data set
 data("Hawks")

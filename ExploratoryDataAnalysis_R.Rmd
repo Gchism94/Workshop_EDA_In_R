@@ -265,6 +265,34 @@ kable(Pretty_lm) %>%
 
 ***
 
+`Estimate` (also known as _beta_): 
+
+* First is the intercept, so the expected value of tail length (mm) when we consider all wing length (mm) values - i.e.,  the average value of tail length is 88.97mm 
+
+* Next is (are) the non-intercept coefficients, or slopes - i.e., for every 1mm of wing length tail length goes up 0.35mm
+
+`CI (lower & upper)` 
+
+* 95% statistical confidence intervals that the true population value for the estimate is between these values - i.e., the estimate calculated from wing length is between 0.34mm and 0.36mm.
+
+`Standard Error`
+
+* The average amount that the coefficient estimates vary from our response variable - i.e., if you ran the model several times the estimate calculated for wing length would vary 0.01mm. 
+
+`t-value`
+
+* How many standard deviations does the coefficient estimate deviate from 0. 
+
+* Large _t-values_ are important towards rejecting the null hypothesis - i.e., the estimate for wing length is 62 std. deviations from 0. 
+
+`Pr(>|t|)`
+
+* Probability of observing any value equal or greater than the _t-value_ - i.e., the probability of observing an _t-value_ of >=62 is <0.001 or <0.001% probable. 
+
+* Remember that the significance cut-off is 0.05, or 95% probability. 
+
+***
+
 #### 3.1 Plotting a linear regression
 ```{r}
 # Plotting the linear relationship between wing and tail length in hawks

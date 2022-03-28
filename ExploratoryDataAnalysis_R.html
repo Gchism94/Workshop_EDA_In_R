@@ -210,7 +210,7 @@ options(digits = 2)
 install.packages(&quot;pacman&quot;)</code></pre>
 <pre><code>## 
 ## The downloaded binary packages are in
-##  /var/folders/c0/w15tbmpn36d7jj_tpjm_sz9c0000gn/T//RtmpdZGMDA/downloaded_packages</code></pre>
+##  /var/folders/c0/w15tbmpn36d7jj_tpjm_sz9c0000gn/T//RtmpeNDdKP/downloaded_packages</code></pre>
 <pre class="r"><code>pacman::p_load(dlookr,
        formattable,
        ggdist,
@@ -2869,6 +2869,30 @@ Wing
 </tr>
 </tbody>
 </table>
+<hr />
+<p><code>Estimate</code> (also known as <em>beta</em>):</p>
+<ul>
+<li><p>First is the intercept, so the expected value of tail length (mm) when we consider all wing length (mm) values - i.e., the average value of tail length is 88.97mm</p></li>
+<li><p>Next is (are) the non-intercept coefficients, or slopes - i.e., for every 1mm of wing length tail length goes up 0.35mm</p></li>
+</ul>
+<p><code>CI (lower &amp; upper)</code></p>
+<ul>
+<li>95% statistical confidence intervals that the true population value for the estimate is between these values - i.e., the estimate calculated from wing length is between 0.34mm and 0.36mm.</li>
+</ul>
+<p><code>Standard Error</code></p>
+<ul>
+<li>The average amount that the coefficient estimates vary from our response variable - i.e., if you ran the model several times the estimate calculated for wing length would vary 0.01mm.</li>
+</ul>
+<p><code>t-value</code></p>
+<ul>
+<li><p>How many standard deviations does the coefficient estimate deviate from 0.</p></li>
+<li><p>Large <em>t-values</em> are important towards rejecting the null hypothesis - i.e., the estimate for wing length is 62 std. deviations from 0.</p></li>
+</ul>
+<p><code>Pr(&gt;|t|)</code></p>
+<ul>
+<li><p>Probability of observing any value equal or greater than the <em>t-value</em> - i.e., the probability of observing an <em>t-value</em> of &gt;=62 is &lt;0.001 or &lt;0.001% probable.</p></li>
+<li><p>Remember that the significance cut-off is 0.05, or 95% probability.</p></li>
+</ul>
 <hr />
 <div id="plotting-a-linear-regression" class="section level4">
 <h4>3.1 Plotting a linear regression</h4>

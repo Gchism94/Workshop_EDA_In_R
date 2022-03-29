@@ -41,6 +41,7 @@ pacman::p_load(dlookr,
        knitr,
        palmerpenguins,
        papeR,
+       RColorBrewer,
        Stat2Data,
        tidyverse)
 
@@ -92,7 +93,7 @@ formattable(diagnose_numeric(Hawks))
 * `Q1`: 1/4 quartile, 25th percentile
 * `mean`: arithmetic mean (average value)
 * `median`: median, 50th percentile
-* `Q3`: 3/4 quartile, 25th percentile
+* `Q3`: 3/4 quartile, 75th percentile
 * `max`: maximum value
 * `zero`: number of observations with the value 0
 * `minus`: number of observations with negative numbers
@@ -162,7 +163,7 @@ plot_na_intersect(Hawks, only_na = TRUE, n_vars = 5, n_intersacts = 5)
 # Box plot
 Hawks %>% # Set the simulated normal data as a data frame
   ggplot(aes(x = Weight, y = Species, fill = Species)) + # Create a ggplot
-  geom_boxplot() +
+  geom_boxplot(width = 0.5) +
   xlab("Body mass (g)") +  # Remove the x axis label
   ylab(NULL) + # Remove the y axis label
   scale_fill_brewer(palette = "Dark2") + # Change the color scheme for the fill criteria

@@ -31,6 +31,7 @@ pacman::p_load(dlookr,
        knitr,
        palmerpenguins,
        papeR,
+       RColorBrewer,
        Stat2Data,
        tidyverse)
 

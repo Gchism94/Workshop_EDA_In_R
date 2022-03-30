@@ -1,4 +1,4 @@
-# Workshop EDA in R
+# Workshop Exploratory Data Analysis in R
 
 ## Purpose of workshop
 __Exploring and visualizing a novel data set and produce publication quality graphs and tables__ 

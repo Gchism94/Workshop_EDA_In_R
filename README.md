@@ -1,4 +1,4 @@
-# Workshop_EDA_In_R
+# Workshop EDA in R
 
 ## Purpose of workshop
 __Exploring and visualizing a novel data set and produce publication quality graphs and tables__ 

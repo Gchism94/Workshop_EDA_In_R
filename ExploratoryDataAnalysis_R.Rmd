@@ -1,7 +1,7 @@
 ---
 title: "Exploratory Data Analysis in R"
 author: "Greg Chism"
-date: "3/28/2022"
+date: "2022/04/11"
 output: 
   html_document: 
     theme: readable
@@ -27,11 +27,16 @@ __Exploring and visualizing a novel data set and produce publication quality gra
 #### Required setup 
 We first need to prepare our environment with the necessary packages and set a global theme for publishable plots in ggplot()
 ```{r}
+# Sets the repository to download packages from
 options(repos = list(CRAN = "http://cran.rstudio.com/"))
+
+# Sets the number of significant figures to two - e.g., 0.01
 options(digits = 2)
 
+# Required package for quick package downloading and loading 
 install.packages("pacman")
 
+# Downloads and load required packages
 pacman::p_load(dlookr,
        formattable,
        ggdist,
@@ -39,14 +44,19 @@ pacman::p_load(dlookr,
        ggridges,
        kableExtra,
        knitr,
-       palmerpenguins,
        papeR,
        RColorBrewer,
        Stat2Data,
        tidyverse)
 
+# This is basically saying: set the base theme for my ggplots() to theme_pubr()
+# ggpubr is a package that helps create publishable ggplots() and theme_pubr() cuts a lot of steps in customizing a ggplot()
 theme_set(theme_pubr())
 ```
+
+***
+
+#### NOTE: There are ways to simplify the code, but I have made it such that your table outputs are publishable HTMLs that you can use immediately. This usually requires one extra step or line. 
 
 ***
 
@@ -144,10 +154,10 @@ formattable(NA.Table)
 # Plot the insersect of the 5 columns with the most missing values
 # This means that some combinations of columns have missing values in the same row
 plot_na_intersect(Hawks, only_na = TRUE, n_vars = 5, n_intersacts = 5) 
-
 ```
 
 ***
+
 
 ### 2.0 Visualize the data with publication quality figures 
 * Relationships among groups - i.e., species 
@@ -164,7 +174,7 @@ plot_na_intersect(Hawks, only_na = TRUE, n_vars = 5, n_intersacts = 5)
 Hawks %>% # Set the simulated normal data as a data frame
   ggplot(aes(x = Weight, y = Species, fill = Species)) + # Create a ggplot
   geom_boxplot(width = 0.5) +
-  xlab("Body mass (g)") +  # Remove the x axis label
+  xlab("Body mass (g)") +  # Change the x axis label
   ylab(NULL) + # Remove the y axis label
   scale_fill_brewer(palette = "Dark2") + # Change the color scheme for the fill criteria
   theme(legend.position = "none") # Remove the legend
@@ -336,3 +346,13 @@ Hawks %>%
   xlim(50, 575) +
   ylim(100, 250)
 ```
+
+***
+
+#### BONUS 
+#### Web report: diagnosing your data
+```{r, eval = FALSE}
+diagnose_web_report(Hawks)
+```
+
+*** 
